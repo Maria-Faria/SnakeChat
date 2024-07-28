@@ -4,8 +4,9 @@ from chatterbot.trainers import ListTrainer
 chatbot = ChatBot("SnakeBot")
 
 conversation = [
-    "Opa",
-    "E aí, tranquilo?",
+    "Oi",
+    "Mensagem automática enviada pelo SnakeBot Python"
+    "Tudo tranquilo?",
     "Tranquilo",
     "Terminou AWS?",
     "Eu não, e vc?",
@@ -14,5 +15,14 @@ conversation = [
     "Eu sei"
 ]
 
-trainer = ListTrainer(chatbot)
-trainer.train(conversation)
+#trainer = ListTrainer(chatbot)
+#trainer.train(conversation)
+
+while True:
+    message = input("Mande uma mensagem para o chatbot: ")
+
+    if message == "tchau":
+        break
+
+    response = chatbot.get_response(message)
+    print(response)
